@@ -1,0 +1,238 @@
+WORA:Write once read anywhere:because of Bytecode and JRE
+High level 
+Strongly typed -restriction in type conversion
+statically typed :can't change the type at once
+Rules of WORA
+Write source code and save it .java 
+complie it into bytecode using javac . Byte code is platform independent 
+Java commands are used to start JRE ehich has JVM reads byte code and convert it to native code
+JRE(can be for MAC Ubuntu windows) is platform independent 
+then machine code is formed 
+Native code is binary data that is written in 1s and 0s to run on a specific processor, also known as machine code or machine language
+JVm calls the main method outside the class hence it must be public 
+JDK vs JRE vs JVM 
+JDK->JRE->JVM
+JDK=java javac appletviewer javah javaw ,jar
+JRE=Class Loader Byte Code Verifier ,Java API ,Runtime lib
+JVM=Java Interpreter JIT Grabage collector Thread sync 
+all must be present for a dev but only jre is need for customer 
+
+JVM 
+.java file-> Java Compiler(javac)-> .classFile(get byteocde)->java 
+Jvm->ClassLoader ->Bytecode Verifier-> Java runtime system -> native os
+Does both compilation and Interpretation
+
+JVM internals 
+High level code is converted using javac to bytecde.class is its extention 
+Classloader :
+First process by JVM is loading and linking
+1. Bootstrap classloader :returns native code 
+$javaHome/JRE/lib
+2. extention classloader (child class loader)
+jre/lib.ext :picks the extentions
+3. Application/system classloader 
+picks from classpath 
+
+Memory :Runtime data area 
+all methods sit here 
+MethodArea /heap for objects /stack/PC registers/ Native method stack 
+
+Execution engine :
+Interpret ->Cache by JIT Comipler-> Garbage collector->low level calls by JNI Java native Interface
+Now goes to OS specific calls -> hardware layer 
+
+OOPS 
+not 100%
+divided into class and objects
+class :blueprint of template initial structure eg batsman 
+objects:virat rohit sachin all have diff styles but blueprint is same 
+
+Java is Robust means reliable 
+Exception handling , memory management :like automatic gc 
+Eh are runtime errors that interrupt the program 
+
+Java supports multithreading :
+Parallelism 
+PrOgram sequnece of instruction 
+Threads lightweight process :smallest seq of programmed instructions that can be amanged independently
+process:instance of program running 
+Stack:maintain stack of a thread 
+
+Modern and Scalable:
+Adapt the changes and make large apps 
+Interface apps 
+Spring 
+Best for automation selenium 
+HIBERNATE 
+
+Secure:
+Byte code verification
+Secuirty manager 
+void of pointer use 
+automatic memory management 
+proper exception handlling 
+access modifiers 
+compile and runtime checking 
+Built by James Gosling Mike Sheridan Patrick Nathton 
+Oak renamed to java 
+In 1996 by Sun microsystems 
+takenover by Oracle in 2009 
+
+public static void main(String [] args)
+JRE execution by :java __
+java-verbose second.class gives us all details 
+like modules libs 
+can we change the signature of main
+we can do by 
+static public void main (String [] args)
+static public void main (String  args[])
+static public void main (String  a[])
+var args
+static public void main (String  ...a)
+
+can we have more one main method?
+You can have as many main methods as you wish, but each one must have a different method signature
+
+public class MyClass1 {
+    public static void main(String[] args) {
+        System.out.println("This is the main method in MyClass1");
+    }
+}
+
+public class MyClass2 {
+    public static void main(String[] args) {
+        System.out.println("This is the main method in MyClass2");
+    }
+}
+java MyClass1
+java MyClass2
+
+Class name and file name is always same ?
+It can be diff 
+compile time just use filename with javac 
+and runtime with java use class name 
+not possible with public class 
+
+System.out.println() how are they linked 
+println comes from PrintStream.class 
+out is an object/reference variable of PrintStream
+java.lang 
+PrintStream out;
+out is a variable 
+PrintStream is ain io 
+public final class System {
+    public static final PrintStream out = new PrintStream(...);
+}
+static PrintStream err;
+can access println
+java has many package :
+langio sql awt utils
+print ()-left to right
+println()-top to bottom
+
+Varible used to store value or reference 
+case sensitive start with alpha/alphanumeric /underscore/dolar 
+int id=90; 
+var x=10; implicit way type inference 
+behaves likes int anything else is not possible 
+float sb=10.2f;
+
+Data types :Primitve/primary/value type/immutable creates a new place
+  and reference/secondary /mutable 
+int x=10; 
+int y=x;
+value gets copied 
+Default value of int is 0
+Default value of boolean is false
+Ref type
+String sx="sachin"
+at RAM has some storage 
+String y=x; stores the reference points to same place 
+
+Primitve :byte 1byte 
+short 2 byte 
+int 4 byte char 2 byte float 4 byte IEEE 754 
+double 8 byte 
+boolean 
+long -8 byte 
+decimal:float double 
+4BX8 =32bit 
+-2^r to 2^r-1
+
+Class is non Primitve data type
+sout(x+20); doesnt update original value 
+need to create new value 
+x=x+20;
+
+String name="Miz"
+value is inside the memory 
+name is reference variable 
+reference size 4/8 byte 
+String/StringBuffer/StringBuilder
+new is used to create an object 
+StringBuffer sc=new StringBuffer("miz");
+StringBuffer sb2=sc;
+both point to same memory 
+provide us with mutability 
+hence if we change one both get changed 
+Check Stringtut.java
+then wrapper 
+
+
+wrapper types are used
+for boxing anf unboxing 
+Java collection frameworks work on objcets 
+Serialization happens on Onject 
+multithreading sync on objects
+provide 100% OOPS
+
+Operators 
+Arithmetic Operators + - % 
+Arithmetic Assignment :a+=b
+/= %=
+Relational Operators:
+== < > <= >= !=
+Logical Operators
+&& || !
+
+Ternary Operators:
+?: if else ka short hand
+int a =20;
+boolean root=a>18?true:false 
+
+Bitwise Operators:
+And OR XOR ^
+jshell 
+5&4=4
+convert to bits and then 
+follow the truth tables 
+
+Even and odd numbers 
+when XOR 
+even :+1
+odd:-1
+
+when AND:
+even=0
+odd:1
+and OR 
+even :+1
+odd:remains same 
+
+Types of Variable
+ 
+
+A variable is a name given to memory location. There are three types of variables in java.
+
+Local Variable.
+Instance Variable.
+Static variable
+
+Break and Continue:
+Break exit from current loop
+Continue:skip a current iteration 
+return:exit from current function
+
+Labelled Loops:
+
+Searching in string takes logarithmic time 

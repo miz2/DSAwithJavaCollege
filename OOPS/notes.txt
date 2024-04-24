@@ -1,0 +1,78 @@
+As C language is a Procdural language and we used to divide into functions
+We used to define variables as global which will always be alive and local variables can also be a choice 
+Can't have 2 functions with same name as they are global 
+With OOPs we can define scopes of fucntions variables
+Java in OOPS is better than C++ as no multiple inheritance hence much more cleaner 
+Data binding happens here :
+In Java, data binding is the connection between class and method, or class and field. 
+Makes it more scalable maintainable reusable 
+
+Class and Object:
+Class is a blueprint Eg wrt to real life example :Humans 
+Object is Realtime 
+Heap memory is created with new and all objets are stored here
+initially acc to our program id-0 name-null salart:0.0 
+class loads to the space in meta space :data about data 
+OOPS+SOLID 
+S : SRP:Single Responsibilty Principle
+Ek class ki ek Responsibilty similarly for functions
+We must also follow DRY :Do not reapeat yourself 
+we must make a employee data class employeeIO class and EmployeeAllocation all must be separated to follow SRP
+this is optional to write 
+Encapsulation:Binding data and methods into a Single unit ans this a called a class 
+Good encapsulation :Data hiding (variables hide)+ functions are public 
+ called with class hence called methods and if without then theyare called fucntions
+ Every Class has a default constructor 
+ when we create an object we call an constructor and default constructor gets call which actually does nothing 
+constructor -object constructor constructor call
+It is used to intilize instance variables(obejct create)  of a class 
+Class name and constructor name must always be same constructor doesn't return anything 
+Even it is not void 
+If we want to call both constructors then we have to do constructor chaining this()
+and we must place it at the top() hence 1st statement :as we need to intilize with this and it won't be possible then 
+we can't modify the values of private variables like hence use setters 
+Class =member variables +member function
+Encapsulation is binding data members +function into a single unit as class
+ram=new Student() initialize which goesto the Heap memory
+but ram is in the stack ,class also goes to heap which is in a section called meta space 
+Memeory is created when object is created ie instance is created
+Deafult constructor gets killed if we create a default constructor by ourself
+on printing an array we get hashcode
+with var it takes data types by itself hence provides flexibily and uses concept of type inference 
+Hence it does it implicitly and doesn't need to be done explicitly
+
+Class relationship :
+Two classes want to communicate with each other 
+a) IS-A :Based on inheritance :Prent child relationship
+*inheritance
+*Polymorphism :One thing having seveler forms 
+b) HAS-A (Object create and use it)-Usage based relationship
+Account and Customer are two classes
+then Customer has a Account
+
+Saving Account is a Account 
+HomeLoan is a Loan
+
+Scopes in Java 
+Local scope is within some {} or a method
+    // default scope here int id !! i.e within the folder menas the package 
+    // protected (within the package ,outside the package using inheritance)
+    // private is within the class 
+    // public accesible everywhere
+    // no global scope is allowed in Java 
+Overriding needs ISA 
+Parent and Child method should be same 
+Overriding is needed to as parent method is outdated 
+@Override is an annotation which gives notice to compiler and developer that we have done Overriding
+Hence we touched Polymorphism :One thing having seveler forms
+Eg:Overriding 
+
+abstract class and methods 
+Account class ka object  should not be made at any cost  as it will not be able to define itself 
+So to resolve it make the class abstract
+It is a generic class hence has common features hence we use it only for inheritance
+
+    // public void computeRoi(){
+    //     System.out.println("Account ROI is 3%");
+    // }
+    // must be defined by class and is compulsory then the child class will also become abstract
